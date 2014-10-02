@@ -1,1 +1,1 @@
-## McAds Website, written in PHP with Laravel. 
+## MCAds Website, written in PHP with Laravel. 
