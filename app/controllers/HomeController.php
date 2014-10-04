@@ -4,20 +4,43 @@ class HomeController extends BaseController {
 
 	/*
 	|--------------------------------------------------------------------------
-	| Default Home Controller
+	| MCAds Home Controller
 	|--------------------------------------------------------------------------
 	|
-	| You may wish to use controllers instead of, or in addition to, Closure
-	| based routes. That's great! Here is an example controller method to
-	| get you started. To route to this controller, just add the route:
-	|
-	|	Route::get('/', 'HomeController@showWelcome');
+	|	Route::get('/', 'HomeController@display_page');
+	* 	@scope MCads
+	* 	@author Chaoyi Zha
 	|
 	*/
-
-	public function showWelcome()
+	public function build_entry ()
 	{
-		return View::make('index.blade');
+		// Build HTML of ad entry
+		/*
+		 * Types of ads:
+		 * 	- Scoreboard
+		 * 	- Bossbar
+		 * 	- Chat
+		 * 	- Hologram
+		 */
+		$base_template = "
+		<tr id=\"scoreboard\">
+			<td>Scoreboard</td>
+			<td>Random ad</td>
+			<td>$21</td>
+			<td>$25</td>
+			<td class=\"input-group-sm\">
+				<input class=\"form-control\" type=\"text\" onclick=\"this.select();\" value=\"http://google.com\" readonly>
+			</td>
+			<td><a href=\"/info/generated_id_here\">More info</a>
+			</td>
+		</tr>"; // Do we really need Threshold?
+		
+	}
+	public function display_page()
+	{
+		View::share('test', "Testing, does this work?");
+		Session::put('username', "cydrobolt");
+		return View::make('index');
 	}
 
 }

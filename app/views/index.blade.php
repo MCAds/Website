@@ -1,4 +1,3 @@
-
 @extends('layouts.base')
 
 @section('content')
@@ -30,7 +29,7 @@
                         <td class="input-group-sm">
                             <input class="form-control" type="text" onclick="this.select();" value="http://google.com" readonly>
                         </td>
-                        <td><a href="http://google.com">More info</a>
+                        <td><a href="/info/generated_id_here">More info</a>
                         </td>
                     </tr>
                     <tr id="bossbar">
@@ -41,7 +40,7 @@
                         <td class="input-group-sm">
                             <input class="form-control" type="text" onclick="this.select();" value="http://google.com" readonly>
                         </td>
-                        <td><a href="http://google.com">More info</a>
+                        <td><a href="/info/id_generated_here">More info</a>
                         </td>
                     </tr>
                     <tr id="chat">
@@ -52,7 +51,7 @@
                         <td class="input-group-sm">
                             <input class="form-control" type="text" onclick="this.select();" value="http://google.com" readonly>
                         </td>
-                        <td><a href="http://google.com">More info</a>
+                        <td><a href="/info/id_generated_here">More info</a>
                         </td>
                     </tr>
                 </tbody>
