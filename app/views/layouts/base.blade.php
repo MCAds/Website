@@ -57,7 +57,7 @@
 		</ul>
 		@else
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="#">Link</a></li>
+				<li><a href="/register">Register</a></li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
 					<ul class="dropdown-menu">
@@ -98,14 +98,16 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 <script src="js/bootstrap-slider.js"></script>
 <script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
-<script src="js/jquery.floatingmessage.js"></script>
+<script src='js/jquery-ui.min.js'></script>
+<script src="js/jquery.floatingmessage.min.js"></script>
 
 @if (strlen(Session::get('error'))>1)
 	<script>
-	$("input#demo_timer1").click(function(){
-		// Get flashed messages
-		$.floatingMessage("{{ Session::get('error') }}",{
+	// Get flashed messages
+	$( document ).ready(function() {
+		$.floatingMessage("<b>{{ Session::get('error') }}</b>",{
 			time:3000,
+			position : "top-right",
 			show : "fold",
 			hide : "explode",
 			stuffEaseTime : 500,
@@ -116,7 +118,14 @@
 	});
 	</script>
 @endif
-
+@if (strlen(Session::get('addjs'))>1)
+	<script>
+	// Get flashed js
+	$( document ).ready(function() {
+		{{ Session::get('addjs') }}
+	});
+	</script>
+@endif
 
 @show
 </body>

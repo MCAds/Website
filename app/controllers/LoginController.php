@@ -11,24 +11,21 @@ class LoginController extends BaseController {
 	* 	@author Chaoyi Zha
 	|
 	*/
-	public function login_user ()
+	public function loginUser ()
 	{
 		// Route: "/login-proc" & processes login requests
 		if (!Input::has('username') || !Input::has('password')) {
 			// If missing inputs
-			return Redirect::to('/login')->with('error', 'Login Failed');
-		
+			return Redirect::to('/login')->with('error', 'Login Failed: You must fill in all fields. ');
+		}
 		$username = Input::get('username', "undefined");
 		$password = Input::get('password', "undefined");
-		
-		
+		return Redirect::to('/')->with('error', "This would log you in");
 	}
-	public function display_page ()
+	public function displayPage ()
 	{
 		// Route: "/login" & displays login page
-		View::share('test', "Testing, does this work?");
-		Session::put('username', "cydrobolt");
-		return View::make('index');
+		return View::make('login');
 	}
 
 }

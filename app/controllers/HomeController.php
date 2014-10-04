@@ -12,7 +12,7 @@ class HomeController extends BaseController {
 	* 	@author Chaoyi Zha
 	|
 	*/
-	public function build_entry ()
+	public function buildEntry ($type, $title, $pptc, $threshold, $ad_id)
 	{
 		// Build HTML of ad entry
 		/*
@@ -23,23 +23,21 @@ class HomeController extends BaseController {
 		 * 	- Hologram
 		 */
 		$base_template = "
-		<tr id=\"scoreboard\">
-			<td>Scoreboard</td>
-			<td>Random ad</td>
-			<td>$21</td>
-			<td>$25</td>
+		<tr id=\"{$type}\">
+			<td>{$type}</td>
+			<td>{$title}</td>
+			<td>{$pptc}</td>
+			<td>{$threshold}</td>
 			<td class=\"input-group-sm\">
 				<input class=\"form-control\" type=\"text\" onclick=\"this.select();\" value=\"http://google.com\" readonly>
 			</td>
-			<td><a href=\"/info/generated_id_here\">More info</a>
+			<td><a href=\"/info/{$ad_id}\">More info</a>
 			</td>
 		</tr>"; // Do we really need Threshold?
 		
 	}
-	public function display_page()
+	public function displayPage()
 	{
-		View::share('test', "Testing, does this work?");
-		Session::put('username', "cydrobolt");
 		return View::make('index');
 	}
 
