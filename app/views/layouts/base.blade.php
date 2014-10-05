@@ -19,7 +19,7 @@
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		</button>
-			<a class="navbar-brand" href="#">MCAds</a>
+			<a class="navbar-brand" href="/">MCAds</a>
 	</div>
 	<div class="navbar-collapse collapse navbar-responsive-collapse">
 		<ul class="nav navbar-nav">
@@ -51,7 +51,7 @@
 					<li><a href="post">Post an ad (advertisers)</a></li>
 					<li><a href="#">Post a slot (servers)</a></li>
 					<li class="divider"></li>
-					<li><a href="#">Logout</a></li>
+					<li><a href="/logout">Logout</a></li>
 				</ul>
 			</li>
 		</ul>

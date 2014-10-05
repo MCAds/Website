@@ -20,12 +20,24 @@ class LoginController extends BaseController {
 		}
 		$username = Input::get('username', "undefined");
 		$password = Input::get('password', "undefined");
-		return Redirect::to('/')->with('error', "This would log you in");
+		if (Auth::attempt(array('username' => $username, 'password' => $password, 'active' => 1)))
+		{
+			return Redirect::to('/')->with('error', "You are now logged in as ".$username);
+		}
+		else 
+		{
+			return Redirect::to('/login')->with('error', "Invalid Username/Password");
+		}
 	}
 	public function displayPage ()
 	{
 		// Route: "/login" & displays login page
 		return View::make('login');
+	}
+	public function logout ()
+	{
+		Auth::logout();
+		return Redirect::to('/')->with('error', "Successfully logged out!");
 	}
 
 }

@@ -15,3 +15,6 @@ Route::get('/logout', function() {
 Route::post('/login-proc', 'LoginController@loginUser'); // Process login
 Route::get('/login', 'LoginController@displayPage'); // Show login page
 Route::get('/info/{id}', 'AdInfoController@displayPage');
+Route::get('/register', 'RegistrationController@displayPage');
+Route::get('/logout', 'LoginController@logout');
+Route::post('/register-proc', 'RegistrationController@registerUser');
