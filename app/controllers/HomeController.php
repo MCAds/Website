@@ -34,10 +34,20 @@ class HomeController extends BaseController {
 			<td><a href=\"/info/{$ad_id}\">More info</a>
 			</td>
 		</tr>"; // Do we really need Threshold?
+		return $base_template;
 		
 	}
 	public function displayPage()
 	{
+		$ads = Ad::paginate(20);
+		$html = "";
+		foreach ($ads as $ad) {
+			$html .= $this->buildEntry($ad->type, $ad->title, $ad->pay, $ad->threshold, $ad->id);
+		}
+		// TODO: Make sure to filter all titles, thresholds, types, etc for tags & such
+		// TODO: When posting ads, make sure to limit title length :)
+		View::share('adhtml', $html);
+		View::share('ads', $ads);
 		return View::make('index');
 	}
 

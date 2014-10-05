@@ -10,9 +10,9 @@
                         </th>
                         <th><span>Title</span>
                         </th>
-                        <th><span><a rel="tooltip" rel="tooltip" title="Pay per 1,000 clicks" href="javascript:void(0);">Pay</a></span>
+                        <th><span><a rel="tooltip" rel="tooltip" title="Pay per 1,000 clicks (USD)" href="javascript:void(0);">Pay</a></span>
                         </th>
-                        <th><span><a rel="tooltip" rel="tooltip" title="How much you have to have made before the money is transferred" href="javascript:void(0);">Threshold</a></span>
+                        <th><span><a rel="tooltip" rel="tooltip" title="How much you have to have made before the money is transferred (USD)" href="javascript:void(0);">Threshold</a></span>
                         </th>
                         <th><span>URL</span>
                         </th>
@@ -20,7 +20,7 @@
                         </th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody><!--
                     <tr id="scoreboard">
                         <td>Scoreboard</td>
                         <td>Random ad</td>
@@ -54,6 +54,14 @@
                         <td><a href="/info/id_generated_here">More info</a>
                         </td>
                     </tr>
+                    -->
+                    @if (strlen($adhtml)>1)
+						{{ $adhtml }}
+						{{ $paginate = true }}
+					@else
+						<div style="text-align:center"><h3>Nothing to see here. Why don't you <a href='/post-ad'>post an ad</a>?</h3></div>
+						{{ $paginate = false }}
+					@endif
                 </tbody>
             </table>
         </div>
@@ -95,6 +103,7 @@
                 </div>
             </div>
         </div>
+        <!--
         <div class="dataTables_paginate paging_simple_numbers" style="align:left;">
             <ul class="pagination">
                 <li class="paginate_button previous disabled"><a href="#">Previous</a>
@@ -115,6 +124,11 @@
                 </li>
             </ul>
         </div>
+        -->
+        
+        @if ($paginate == true)
+			{{ $ads->links() }}
+		@endif
     </div>
 @stop
 @section('foot')
