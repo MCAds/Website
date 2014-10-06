@@ -1,6 +1,7 @@
--- phpMyAdmin SQL Dump
--- version 4.2.7.1
--- http://www.phpmyadmin.net
+-- MCAds Website - Laravel PHP
+-- http://github.com/mcads/Website
+-- Ads table schema, created with 
+-- PHPMyAdmin version 4.2.7.1
 --
 -- Host: localhost
 -- Generation Time: Oct 06, 2014 at 09:57 PM
