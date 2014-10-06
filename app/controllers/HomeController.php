@@ -12,7 +12,7 @@ class HomeController extends BaseController {
 	* 	@author Chaoyi Zha
 	|
 	*/
-	public function buildEntry ($type, $title, $pptc, $threshold, $ad_id)
+	public function buildEntry ($type, $title, $pptc, $threshold, $ad_id, $url)
 	{
 		// Build HTML of ad entry
 		/*
@@ -22,14 +22,15 @@ class HomeController extends BaseController {
 		 * 	- Chat
 		 * 	- Hologram
 		 */
+		$typeid = strtolower($type);
 		$base_template = "
-		<tr id=\"{$type}\">
+		<tr id=\"{$typeid}\">
 			<td>{$type}</td>
 			<td>{$title}</td>
 			<td>{$pptc}</td>
 			<td>{$threshold}</td>
 			<td class=\"input-group-sm\">
-				<input class=\"form-control\" type=\"text\" onclick=\"this.select();\" value=\"http://google.com\" readonly>
+				<input class=\"form-control\" type=\"text\" onclick=\"this.select();\" value=\"{$url}\" readonly>
 			</td>
 			<td><a href=\"/info/{$ad_id}\">More info</a>
 			</td>
@@ -42,7 +43,7 @@ class HomeController extends BaseController {
 		$ads = Ad::paginate(20);
 		$html = "";
 		foreach ($ads as $ad) {
-			$html .= $this->buildEntry($ad->type, $ad->title, $ad->pay, $ad->threshold, $ad->id);
+			$html .= $this->buildEntry($ad->type, $ad->title, $ad->pay, $ad->threshold, $ad->id, $ad->url);
 		}
 		// TODO: Make sure to filter all titles, thresholds, types, etc for tags & such
 		// TODO: When posting ads, make sure to limit title length :)

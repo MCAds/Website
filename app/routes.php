@@ -18,3 +18,5 @@ Route::get('/info/{id}', 'AdInfoController@displayPage');
 Route::get('/register', 'RegistrationController@displayPage');
 Route::get('/logout', 'LoginController@logout');
 Route::post('/register-proc', 'RegistrationController@registerUser');
+Route::post('/post-ad-proc', array('before' => 'auth', 'do' => 'AdController@postAd'));
+Route::get('/post', array('before' => 'auth', 'do' => 'AdController@displayPage'));

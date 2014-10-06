@@ -32,7 +32,7 @@ class RegistrationController extends BaseController {
 				'email' => $email
 			),
 			array(
-				'username' => 'required|max:65|alha_num|unique:users',
+				'username' => 'required|max:65|alpha_num|unique:users',
 				'password' => 'required|max:200',
 				'email' => 'required|email|unique:users'
 			)
