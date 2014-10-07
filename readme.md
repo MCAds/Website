@@ -1,6 +1,6 @@
 ## MCAds Website
 
-written in PHP with [Laravel](http://laravel.com/). 
+written in PHP with Laravel. 
 
 Dependencies:
 
@@ -9,7 +9,7 @@ Dependencies:
   - PHP-MCrypt
   - PHP-PDO
 
-Running MCAds Website:
+Running MCAds-Website:
 
-Navigate to the root directory, then run `php artisan serve`. It is also hookable with Apache and nginx. Read [Laravel documention](http://laravel.com/docs/) for more information. 
+Navigate to /Website/app, then run `php artisan serve`. It is also hookable with Apache and nginx. Read Laravel documention for more information. 
   
