@@ -22,6 +22,9 @@ class HomeController extends BaseController {
 		 * 	- Chat
 		 * 	- Hologram
 		 */
+		 $title = strip_tags($title);
+		 $url = strip_tags($url);
+		 $pptc = strip_tags($pptc);
 		$typeid = strtolower($type);
 		$base_template = "
 		<tr id=\"{$typeid}\">
