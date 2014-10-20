@@ -132,45 +132,4 @@
     </div>
 @stop
 @section('foot')
- <script type="text/javascript">
-        var types = ["scoreboard", "bossbar", "chat", "hologram"];
 
-
-        function tableUpdate() {
-            $("tr").each(function(index) {
-                for (i = 0; i < types.length; i++) {
-                    if ($(this).attr('id') == types[i]) {
-                        if ((!$('input#' + types[i]).is(':checked')) && (!$('input#allTypes').is(':checked'))) {
-                            $(this).hide();
-                        } else {
-                            $(this).show();
-                        }
-                    }
-                }
-
-            });
-        }
-
-        function uncheckTypes() {
-            for (i = 0; i < types.length; i++) {
-                $('input#' + types[i]).prop('checked', false);
-            }
-        }
-
-        /*		$("#ppt").slider({})
-        $('#ppt').on('slide', function(ev) {
-			if($('#ppt').val().contains("101")){
-			   alert('hu');
-			}else{
-				alert($('#ppt').val());
-			}
-            console.log($('#ppt').val());
-        });
-        $("#pt").slider({});*/
-
-
-
-        $(function() {
-            $('#adList').tablesorter();
-        });
-    </script>
