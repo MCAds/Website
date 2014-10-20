@@ -100,6 +100,35 @@
 <script type="text/javascript" src="js/jquery.tablesorter.min.js"></script>
 <script src='js/jquery-ui.min.js'></script>
 <script src="js/jquery.floatingmessage.min.js"></script>
+<script type="text/javascript">
+	var types = ["scoreboard", "bossbar", "chat", "hologram"];
+	
+	
+	function tableUpdate() {
+	    $("tr").each(function(index) {
+	        for (i = 0; i < types.length; i++) {
+	            if ($(this).attr('id') == types[i]) {
+	                if ((!$('input#' + types[i]).is(':checked')) && (!$('input#allTypes').is(':checked'))) {
+	                    $(this).hide();
+	                } else {
+	                    $(this).show();
+	                }
+	            }
+	        }
+	
+	    });
+	}
+	
+	function uncheckTypes() {
+	    for (i = 0; i < types.length; i++) {
+	        $('input#' + types[i]).prop('checked', false);
+	    }
+	}
+	
+	$(function() {
+	    $('#adList').tablesorter();
+	});
+</script>
 
 @if (strlen(Session::get('error'))>1)
 	<script>
