@@ -5,3 +5,4 @@ MCAds Misc. Todos:
 	- Intergrate PayPal IPN to manage payments and such
 	  (might be a hassle with complaints, etc
 	- Sorting across pages	
+	- Make posting an ad/slot actually work
