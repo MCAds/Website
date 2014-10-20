@@ -1,8 +1,7 @@
 MCAds Misc. Todos:
 
 	- Manage users' ads via web. I can implement this. @gradymcd
-	- Get rid of threshold?
 	- 1000 clicks is too much. Rules out small servers
 	- Intergrate PayPal IPN to manage payments and such
 	  (might be a hassle with complaints, etc
-	
+	- Sorting across pages	
