@@ -3,7 +3,11 @@
 @section('content')
 <div class='container-fluid' style='text-align:center;margin:0 auto; width: 670px'>
 
-{{ Form::open(array('action' => 'LoginController@loginUser')) }}
+@if($https===true)
+    {{ Form::open(array('action' => 'RegistrationController@registerUser', 'url' => URL::to('/login-proc', array(), true))) }}
+@else
+    {{ Form::open(array('action' => 'RegistrationController@registerUser')) }}
+@endif
 
 <h2>Login</h2>
 <br />

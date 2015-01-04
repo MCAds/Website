@@ -54,7 +54,8 @@ class RegistrationController extends BaseController {
 	}
 	public function displayPage ()
 	{
-		return View::make('register');
+        return View::make('register', array('https' => (Request::server('HTTP_X_FORWARDED_PROTO') == 'https')));
+		
 	}
 
 }

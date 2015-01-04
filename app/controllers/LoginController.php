@@ -32,7 +32,7 @@ class LoginController extends BaseController {
 	public function displayPage ()
 	{
 		// Route: "/login" & displays login page
-		return View::make('login');
+		return View::make('login', array('https' => (Request::server('HTTP_X_FORWARDED_PROTO') == 'https')));
 	}
 	public function logout ()
 	{

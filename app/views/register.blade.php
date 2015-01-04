@@ -3,8 +3,12 @@
 @section('content')
 <div class='container-fluid' style='text-align:center;margin:0 auto; width: 670px'>
 
-{{ Form::open(array('action' => 'RegistrationController@registerUser')) }}
-
+@if($https===true)
+    {{ Form::open(array('action' => 'RegistrationController@registerUser', 'url' => URL::to('/register-proc', array(), true))) }}
+@else
+    {{ Form::open(array('action' => 'RegistrationController@registerUser')) }}
+@endif
+    
 <h2>Register</h2>
 <br />
 <div class='input-group'>

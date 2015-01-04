@@ -59,7 +59,7 @@
 						{{ $adhtml }}
 						{{ $paginate = true }}
 					@else
-						<div style="text-align:center"><h3>Nothing to see here. Why don't you <a href='/post-ad'>post an ad</a>?</h3></div>
+						<div style="text-align:center"><h3>Nothing to see here. Why don't you <a href='/post'>post an ad</a>?</h3></div>
 						{{ $paginate = false }}
 					@endif
                 </tbody>

@@ -41,7 +41,7 @@ class AdController extends BaseController {
 	}
 	public function displayPage()
 	{
-		return View::make('adv-post');
+		return View::make('adv-post', array('https' => (Request::server('HTTP_X_FORWARDED_PROTO') == 'https')));
 	}
 
 }
