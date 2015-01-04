@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `ads` (
   `pay` int(7) NOT NULL,
   `threshold` int(7) NOT NULL,
   `url` text NOT NULL,
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(65) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
